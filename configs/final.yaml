@@ -1,0 +1,55 @@
+DATALOADER:
+  NUM_WORKERS: 8
+DATASETS:
+  DISTANCE_TH: 0.02
+  IMAGE:
+    HEIGHT: 512
+    WIDTH: 512
+    PIXEL_MEAN:
+    - 109.73
+    - 103.832
+    - 98.681
+    PIXEL_STD:
+    - 22.275
+    - 22.124
+    - 23.229
+    TO_255: true
+  NUM_STATIC_NEGATIVE_LINES: 40
+  NUM_STATIC_POSITIVE_LINES: 300
+  AUGMENTATION: 6
+  TARGET:
+    HEIGHT: 512
+    WIDTH: 512
+  TEST:
+  - wireframe_test
+  TRAIN:
+  - wireframe_train
+  VAL:
+  - wireframe_test
+MODEL:
+  DEVICE: cuda
+  BACKBONE: 'unet'
+  UNET:
+    INPUT_CHANNELS: 3
+    NUM_CLASSES: 7
+    BILINEAR: true
+  LOSS_WEIGHTS:
+    loss_seg: 2.0
+    loss_cls: 1.0
+  WEIGHTS: ''
+OUTPUT_DIR: output/SemenaticSegmentation
+SOLVER:
+  AMSGRAD: false
+  BACKBONE_LR_FACTOR: 1.0
+  BASE_LR: 0.0004
+  BIAS_LR_FACTOR: 1
+  CHECKPOINT_PERIOD: 1
+  GAMMA: 0.1
+  IMS_PER_BATCH: 3
+  MAX_EPOCH: 100   # for now
+  MOMENTUM: 0.9
+  OPTIMIZER: ADAM
+  STEPS:
+  - 25
+  WEIGHT_DECAY: 0.0001
+  WEIGHT_DECAY_BIAS: 0
