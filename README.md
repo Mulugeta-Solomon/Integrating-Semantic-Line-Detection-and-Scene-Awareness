@@ -1,6 +1,8 @@
 # Integrating Semantic Line Detection and Scene Awareness
 Implementation of  "Integrating Semantic Line Detection and Scene-Awareness" RSJ2024
 
+![image](assets/image.png)
+
 ## Data Downloading
 The training and testing datasets (including the Wireframe dataset and YorkUrban dataset) can be downloaded via [Google Drive](https://drive.google.com/file/d/134L-u9pgGtnzw0auPv8ykHqMjjZ2claO/view). Many thanks to the authors of these excellent datasets!
 
